@@ -27,7 +27,7 @@ const teamTrackingSchema = {
 }
 
 const orderSchema = new mongoose.Schema({
-  order_number: { type: String, required: true, unique: true },
+  order_number: { type: String,  },
   dispatcher_name: { type: String, required: true },
   customer_name: { type: String, required: true },
   created_at: { type: Date, default: Date.now },
@@ -38,8 +38,8 @@ const orderSchema = new mongoose.Schema({
   },
   order_details: {
     glass: [{
-      glass_name: { type: String, required: true },
-      quantity: { type: Number, required: true, min: 1 },
+      glass_name: { type: String,  },
+      quantity: { type: Number, },
       weight: String,
       neck_size: String,
       decoration: String,
@@ -57,9 +57,9 @@ const orderSchema = new mongoose.Schema({
       team_tracking: teamTrackingSchema
     }],
     caps: [{
-      cap_name: { type: String, required: true },
+      cap_name: { type: String, },
       neck_size: String,
-      quantity: { type: Number, required: true, min: 1 },
+      quantity: { type: Number,  },
       process: String,
       material: String,
       team: String,
@@ -71,8 +71,8 @@ const orderSchema = new mongoose.Schema({
       team_tracking: teamTrackingSchema
     }],
     boxes: [{
-      box_name: { type: String, required: true },
-      quantity: { type: Number, required: true, min: 1 },
+      box_name: { type: String, },
+      quantity: { type: Number,  },
       approval_code: String,
       team: String,
       status: {
@@ -83,9 +83,9 @@ const orderSchema = new mongoose.Schema({
       team_tracking: teamTrackingSchema
     }],
     pumps: [{
-      pump_name: { type: String, required: true },
+      pump_name: { type: String,  },
       neck_type: String,
-      quantity: { type: Number, required: true, min: 1 },
+      quantity: { type: Number, },
       team: String,
       status: {
         type: String,
